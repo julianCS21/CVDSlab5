@@ -1,0 +1,16 @@
+0:0:0:0:0:0:0:1 - - [08/Oct/2022:07:35:35 -0500] "GET / HTTP/1.1" 200 57 http-bio-8080-exec-1 1262
+0:0:0:0:0:0:0:1 - - [08/Oct/2022:07:35:35 -0500] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8080-exec-3 1
+0:0:0:0:0:0:0:1 - - [08/Oct/2022:07:38:27 -0500] "GET /name HTTP/1.1" 404 959 http-bio-8080-exec-5 2
+0:0:0:0:0:0:0:1 - - [08/Oct/2022:07:42:15 -0500] "GET /GET HTTP/1.1" 404 957 http-bio-8080-exec-8 2
+0:0:0:0:0:0:0:1 - - [08/Oct/2022:07:43:42 -0500] "GET /?name HTTP/1.1" 200 57 http-bio-8080-exec-2 4
+0:0:0:0:0:0:0:1 - - [08/Oct/2022:07:43:49 -0500] "GET /?n HTTP/1.1" 200 57 http-bio-8080-exec-2 2
+0:0:0:0:0:0:0:1 - - [08/Oct/2022:07:43:58 -0500] "GET /?name=2 HTTP/1.1" 200 57 http-bio-8080-exec-2 4
+0:0:0:0:0:0:0:1 - - [08/Oct/2022:08:08:36 -0500] "GET /?name HTTP/1.1" 200 57 http-bio-8080-exec-7 3
+0:0:0:0:0:0:0:1 - - [08/Oct/2022:08:08:41 -0500] "GET /?name=hola HTTP/1.1" 200 57 http-bio-8080-exec-7 5
+0:0:0:0:0:0:0:1 - - [08/Oct/2022:08:11:50 -0500] "GET /helloservlet?name=hola HTTP/1.1" 404 975 http-bio-8080-exec-10 81
+0:0:0:0:0:0:0:1 - - [08/Oct/2022:08:12:10 -0500] "GET /?name=helloservlet HTTP/1.1" 200 57 http-bio-8080-exec-5 44
+0:0:0:0:0:0:0:1 - - [08/Oct/2022:08:12:59 -0500] "GET /helloServlet HTTP/1.1" 200 16 http-bio-8080-exec-8 4477
+0:0:0:0:0:0:0:1 - - [08/Oct/2022:08:15:31 -0500] "GET / HTTP/1.1" 200 57 http-bio-8080-exec-7 422
+0:0:0:0:0:0:0:1 - - [08/Oct/2022:08:35:22 -0500] "GET /helloServlet HTTP/1.1" 200 16 http-bio-8080-exec-3 1
+0:0:0:0:0:0:0:1 - - [08/Oct/2022:08:38:57 -0500] "GET /helloServlet?name=julian HTTP/1.1" 200 22 http-bio-8080-exec-1 198
+0:0:0:0:0:0:0:1 - - [08/Oct/2022:08:39:04 -0500] "GET /helloServlet?name=%20julian HTTP/1.1" 200 23 http-bio-8080-exec-1 1
