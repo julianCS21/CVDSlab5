@@ -15,7 +15,7 @@
         <br/>
         <p:outputLabel value="Premio #{guessBean.prize}"/>
         <br/>
-        <p:inputText id="currentAttempt" value="Digite un numero : #{guessBean.attemptNumber}"/>
+        <p:inputText id="currentAttempt"  placeholder="digite un numero" value="#{guessBean.attemptNumber}"/>
         <p:commandButton update="guess_form" actionListener="#{guessBean.guess}" value="Guess"/>
         <p:commandButton update="guess_form" actionListener="#{guessBean.restart}" value="Restart"
                          styleClass="ui-priority-primary"/>

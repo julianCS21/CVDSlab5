@@ -1,14 +1,16 @@
 package edu.eci.cvds.servlet.model;
-import javax.annotation.ManagedBean;
-import javax.enterprise.context.ApplicationScoped;
+
+
 import java.util.Random;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.bean.ApplicationScoped;
+import javax.faces.bean.ManagedBean;
 import javax.faces.event.ActionEvent;
 
 
-@ManagedBean(value = "guessBean")
+@ManagedBean(name = "guessBean")
 
-@ApplicationScoped
+@SessionScoped
 public class BackingBean {
 
 
@@ -24,14 +26,21 @@ public class BackingBean {
     private String gameState;
 
     public BackingBean(){
+        start();
+    }
+
+    public void setAttemptNumber(int attemptNumber) {
+        this.attemptNumber = attemptNumber;
+    }
+
+    private void start(){
         Random ran = new Random();
-        this.randomNumber = ran.nextInt();
+        this.randomNumber = ran.nextInt(10);
         this.attempts = 0;
         this.attemptNumber = 0;
         this.prize = 100000;
         this.gameState = "NO HA GANADO";
     }
-
 
     public int getRandomNumber() {
         return randomNumber;
@@ -41,11 +50,9 @@ public class BackingBean {
         return attemptNumber;
     }
 
-    public void setAttemptNumber(int attemptNumber) {
-        this.attemptNumber = attemptNumber;
-    }
 
-    public void setRandomNumber(int randomNumber) {
+
+    public void setRandomNumber() {
         this.randomNumber = randomNumber;
     }
 
@@ -75,11 +82,14 @@ public class BackingBean {
 
     public void guess (ActionEvent actionEvent){
         this.attempts+= 1;
-        if(this.attemptNumber == this.randomNumber){
+        if(this.attemptNumber == this.randomNumber && this.attempts <= 10){
             this.gameState = "FELICIDADES A GANADO, PREMIO TOTAL : " + getPrize();
         }
         else{
-            this.prize -= 10000;
+            if(this.prize != 0){
+                this.prize -= 10000;
+            }
+
         }
 
 
@@ -87,8 +97,7 @@ public class BackingBean {
     }
 
     public void restart(ActionEvent actionEvent){
-        setPrize(100000);
-        this.attempts = 0;
+        start();
     }
 
 
